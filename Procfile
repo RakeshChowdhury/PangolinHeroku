@@ -1,0 +1,1 @@
+worker: ./pangolin/start.sh
