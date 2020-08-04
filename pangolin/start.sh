@@ -4,7 +4,8 @@ TOKENS='["12345", "12345678", "pangolin", "password"]'
 ROLE=SERVER
 
 function start_server ()
-{
+{	
+	echo Configuring Network...
 	ip tuntap add dev tun0 mod tun
 	ip addr add 10.0.0.2/8 dev tun0
 	ip link set tun0 up
@@ -20,6 +21,7 @@ function start_server ()
 	iptables -A INPUT -p tcp --destination-port `expr $SERVERPORT + 1` -j DROP
 
 	cp -f configs/cfg_server.json.template configs/cfg_server.json
+	echo Starting Server...
 	replace configs/cfg_server.json
 	./main -c configs/cfg_server.json 
 }
@@ -55,6 +57,8 @@ function replace ()
 	sed -i "s/{INTERFACE}/$INTERFACE/g" $1
 }
 
+
+echo Start...
 
 [[ "$ROLE" == "SERVER" ]] && start_server
 [[ "$ROLE" == "CLIENT" ]] && start_client
