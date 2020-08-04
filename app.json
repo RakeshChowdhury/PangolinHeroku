@@ -2,6 +2,12 @@
 {
     "name": "PangolinHeroku",
     "description": "A heroku Pangolin server",
-    "image": "heroku/docker",
-    "addons": []
+	"image": "heroku/docker",
+    "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+    "stack": "container"
 }
