@@ -1,0 +1,11 @@
+{
+    "role": "server",
+    "server": ":12345",
+    "tun": "10.0.0.2/8",
+    "tunname": "tun0",
+	"ptcpinterface": "eth0",
+    "dns": "8.8.8.8",
+    "mtu": 1400,
+    "protocol": "ptcp",
+    "tokens": ["12345", "12345678"]
+}
