@@ -1,3 +1,7 @@
+
 {
-    "name": "PangolinHeroku"
+    "name": "PangolinHeroku",
+    "description": "A heroku Pangolin server",
+    "image": "heroku/docker",
+    "addons": []
 }
