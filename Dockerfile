@@ -10,8 +10,8 @@ ENTRYPOINT bash /pangolin/start.sh
 
 
 
-RUN apt update
-RUN apt install -y iproute2 iptables net-tools dos2unix
+RUN apt-get update
+RUN apt-get install -y iproute2 iptables net-tools dos2unix
 RUN apt-get install -y \
     git curl build-essential libssl-dev zlib1g-dev
 COPY pangolin /pangolin
