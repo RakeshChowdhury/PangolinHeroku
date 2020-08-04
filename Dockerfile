@@ -1,6 +1,5 @@
-FROM ubuntu
-#Heroku
-#USER root
+FROM golang:alpine
+RUN go version
 
 # Expose 8080
 # Heroku PORT env var
